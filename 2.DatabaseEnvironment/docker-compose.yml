@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  sql:
+    hostname: pg
+    container_name: pg
+    image: postgres:12
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+volumes:
+  pg-data:
